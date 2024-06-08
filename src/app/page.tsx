@@ -1,8 +1,11 @@
-import LandingPage from "@/components/landing-page"
+import Footer from "../components/footer";
+import AboutUs from "../components/aboutus";
+
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
-      <LandingPage/>
-    </main>
+    <>
+      <AboutUs/>
+      <Footer />
+    </>
   );
 }
