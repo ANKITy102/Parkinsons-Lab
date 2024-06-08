@@ -4,6 +4,8 @@ import about from "../../assets/Deco/Title.png";
 
 export default function AboutUs() {
   return (
+    <>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
     <div className="text-black z-[-6] h-[30rem] flex flex-row bg-black">
       <Image
         className="relative h-[29rem] w-[29rem] right-[5.5rem] top-2 bottom-2"
@@ -54,5 +56,6 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
+    </>
   );
 }
