@@ -7,7 +7,7 @@ import Doctor from "@/assets/doctor.png"
 import Play from "@/assets/play.png"
 const index = () => {
   return (
-    <div className="bg-black overflow-x-hidden relative text-white min-h-screen w-screen">
+    <div className="bg-black overflow-x-hidden overflow-y-hidden relative text-white min-h-screen w-screen">
       <Header/>
       <Image
             src={Oval1}
