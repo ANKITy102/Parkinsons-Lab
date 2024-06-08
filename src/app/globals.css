@@ -31,3 +31,24 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* Style for WebKit browsers */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  height: 6px; /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Background of the scrollbar track */
+  border-radius: 5px; /* Rounding the corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounding the corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
