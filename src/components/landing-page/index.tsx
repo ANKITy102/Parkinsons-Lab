@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from "@/components/header"
 import Image from 'next/image'
 import Oval1 from "@/assets/Oval1.png"
 import Oval2 from "@/assets/Oval2.png"
@@ -8,7 +7,6 @@ import Play from "@/assets/play.png"
 const index = () => {
   return (
     <div className="bg-black overflow-x-hidden overflow-y-hidden relative text-white min-h-screen w-screen">
-      <Header/>
       <Image
             src={Oval1}
             width={1100}

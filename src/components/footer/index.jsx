@@ -3,7 +3,7 @@ import logo from "../../assets/logo-black.png";
 
 export default function Footer() {
   return (
-    <footer className=" z-10 w-full bg-black sm:p-9 p-9">
+    <footer className="static bottom-0 z-10 w-full bg-black sm:p-9 p-9">
       <div className="mx-auto max-w-screen-full px-5">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

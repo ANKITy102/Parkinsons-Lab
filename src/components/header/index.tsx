@@ -11,7 +11,7 @@ export default () => {
     const navigation = [
         { title: "Home", path: "/" },
         { title: "About us", path: "/aboutus" },
-        { title: "Test", path: "Test" },
+        { title: "Test", path: "form" },
         { title: "Support", path: "/support" }
     ]
 
@@ -52,7 +52,7 @@ export default () => {
                             navigation.map((item, idx) => {
                                 return (
                                     <li key={idx} className="z-30 text-white text-xl tracking-wide font-mono hover:text-cyan-200">
-                                        <Link href={item.path} className="block">
+                                        <Link href={item.path} className="block" >
                                             {item.title}
                                         </Link>
                                     </li>
