@@ -10,7 +10,7 @@ export default function AboutUs() {
         src={circle}
       />
       <Image
-        className="h-[19rem] w-[19rem] z-10 absolute top-[5.5rem] left-[3rem]"
+        className="h-[19rem] w-[19rem] z-10 mt-[6rem] ml-[-27rem]"
         src={about}
       />
       <div className="flex flex-col ml-[8rem] gap-[4rem] py-10">
