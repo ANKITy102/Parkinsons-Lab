@@ -16,7 +16,7 @@ export default function Footer() {
                 priority
               />
             </a>
-            <div className="text-gray-500 w-[44rem] text-[12px] mt-8">© 2024 Parkinson's Lab - Detecting Parkinson's Through Your Voice</div>
+            <div className="text-gray-500 w-[44rem] text-[12px] mt-8">© 2024 Parkinson's Lab - Detecting Parkinson's Through Voice</div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 ml-8">
             <div>
