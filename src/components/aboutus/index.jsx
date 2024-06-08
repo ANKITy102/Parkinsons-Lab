@@ -4,7 +4,7 @@ import about from "../../assets/Deco/Title.png";
 
 export default function AboutUs() {
   return (
-    <div className="text-black z-[-6] bg-white h-[30rem] flex flex-row bg-black">
+    <div className="text-black z-[-6] h-[30rem] flex flex-row bg-black">
       <Image
         className="relative h-[29rem] w-[29rem] right-[5.5rem] top-2 bottom-2"
         src={circle}
