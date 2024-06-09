@@ -1,9 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Form() {
+  const router = useRouter();
   const initialFormData = { name: "", age: "", gender: "" };
   const [formData, setFormData] = useState(initialFormData);
+  // const [flgName, setFlgName] = useState(false);
+  // const [flgAge, setFlgAge] = useState(false);
+  // const [flgGender, setFlgGender] = useState(false);
   // console.log(formData);
 
   const handleChange = (e) => {
@@ -13,11 +18,28 @@ export default function Form() {
       [name]: value,
     });
   };
+  const handleClick = () => {
+    // if(formData.name!=="") setFlgName(true)
+    // if(formData.age!=="") setFlgAge(true)
+    // if(formData.gender!=="") setFlgGender(true)
+    //   console.log(flgName,flgAge,flgGender);
+      // if(flgName===true && flgAge===true && flgGender===true){
+        router.push("/test")
+        // setFlgName(false)
+        // setFlgAge(false)
+        // setFlgGender(false)
+      //  }
+  };
 
   return (
-    <form className="max-w-[55%] ml-[6rem] mt-[4rem]">
-      <div className="text-[2.6rem] font-extrabold mb-[2.5rem] text-[#03A9F4]">
-        Details
+    <form className="max-w-[55%] ml-[8rem] mt-[4rem]">
+      <div className="mb-[2.5rem]">
+        <div className="text-[2.6rem] font-extrabold mb-[1rem] text-[#03A9F4]">
+          Details
+        </div>
+        <div className={`text-sm text-[red] mb-[2px] ${!true ? "" : "hidden"}`}>*Name is required</div>
+        <div className={`text-sm text-[red] mb-[2px] ${!true ? "" : "hidden"}`}>*Age is required</div>
+        <div className={`text-sm text-[red] mb-[2px] ${!true ? "" : "hidden"}`}>*Gender is required</div>
       </div>
       <div className="relative z-0 w-full mb-[4rem] group">
         <input
@@ -105,7 +127,8 @@ export default function Form() {
         </div>
       </fieldset>
       <button
-        type="submit"
+        type="button"
+        onClick={handleClick}
         className="text-white bg-[#03A9F4] hover:bg-blue-800 focus:ring-4 focus:outline-none mt-[2rem] focus:ring-blue-300 font-medium rounded-lg text-md w-[20%] px-5 py-2.5 text-center dark:bg-[#03A9F4] dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Take Test

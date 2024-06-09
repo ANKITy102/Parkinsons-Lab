@@ -4,6 +4,7 @@ import Oval1 from "@/assets/Oval1.png"
 import Oval2 from "@/assets/Oval2.png"
 import Doctor from "@/assets/doctor.png"
 import Play from "@/assets/play.png"
+import Btn from "@/components/button"
 const index = () => {
   return (
     <div className="bg-black overflow-x-hidden overflow-y-hidden relative text-white min-h-screen w-screen">
@@ -43,6 +44,7 @@ const index = () => {
             <div className="w-1/3 mt-20 text-white leading-10 text-3xl pl-16">
                 Your health and wellbeing is important for us.
             </div>
+            <Btn data={"Take Test"} path={"form"}/>
     </div>
   )
 }
