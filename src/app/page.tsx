@@ -1,6 +1,6 @@
 import AboutUs from "@/components/aboutus";
 import LandingPage from "@/components/landing-page"
-
+import Team from "@/components/team"
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       
       <LandingPage/>
       <AboutUs/>
-      
+      <Team/>
     </main>
   );
 }

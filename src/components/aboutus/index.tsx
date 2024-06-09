@@ -6,7 +6,7 @@ export default function AboutUs() {
   return (
     <>
     <hr className="h-px my-8 border-0 bg-gray-700"></hr>
-    <div className="text-black z-[-6] h-[30rem] flex flex-row bg-black">
+    <div className="text-black my-20 z-[-6] h-[30rem] flex flex-row bg-black">
       <Image
         className="relative h-[29rem] w-[29rem] right-[5.5rem] top-2 bottom-2"
         src={circle}
