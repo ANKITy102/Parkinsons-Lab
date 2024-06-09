@@ -1,18 +1,14 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
-import gif from "../../assets/44zG.gif";
+import React, { useEffect, useState, useRef, FormEvent } from "react";
 import Btn from "@/components/button";
+import { useUserContext } from "@/context/user-context";
+import { useRouter } from "next/navigation";
 
 const mimeType = "audio/mpeg";
 
-export default function TakingTest(props) {
-  //   useEffect(() => {
-  //     document.getElementById("testformBig").style.display = "none";
-  //     document.body.style.height = "normal";
-  //     document.body.style.overflowY = "auto";
-  //   }, []);
-
+export default function TakingTest() {
+  const {setFeatures,setDiagnosis} = useUserContext();
   const [show, setShow] = useState(0);
   const [permission, setPermission] = useState(false);
   const mediaRecorder = useRef(null);
@@ -22,10 +18,11 @@ export default function TakingTest(props) {
   const [audio, setAudio] = useState(null);
   const [file, setFile] = useState(null);
   const [reccordeddBob, setRecordedBlob] = useState(null);
-
+  const router = useRouter();
   const handleSubmit = async (event) => {
     event.preventDefault();
     let formData = new FormData();
+    if(!reccordeddBob) return;
     formData.append("files", reccordeddBob);
     let outcome = await fetch("http://localhost:5000/predict", {
       method: "POST",
@@ -45,8 +42,19 @@ export default function TakingTest(props) {
     const r7 = data.Fhi;
     const r8 = data.MDVP_Fo;
     const r9 = data.result;
-    props.setTestData(r1, r2, r3, r4, r5, r6, r7, r8, r9);
-    document.getElementById("takeToResult").click();
+    const features = {
+      Jitter_DDP: r1,
+      "MDVP_Fhi(Hz)": `${r2}`,
+      "MDVP_Flo(Hz)": `${r3}`,
+      "MDVP_Fo(Hz)": `${r4}`,
+      "MDVP_Jitter(%)": `${r5}%`,
+      "MDVP_Jitter(Abs)": `${r6}`,
+      "MDVP_PPQ":`00001201.2`,
+      "MDVP_RAP":`000003931.2`,
+    }
+    setDiagnosis(Number(r9)?"Positive":"Negative");
+    setFeatures(features);
+    router.push("/result");
   };
 
   const startRecording = async () => {
@@ -96,20 +104,20 @@ export default function TakingTest(props) {
 
   return (
     <>
-      <div className="flex justify-around items-center min-h-[89vh] flex-row">
-        <div className="w-full md:w-[40%] relative mb-8 md:mb-0">
-          <h2 className="text-center border-2 border-[#03A9F4] text-[#03A9F4] text-2xl py-[1rem] mt-[2rem] mb-[6rem] font-medium rounded-full mx-auto w-[80%]">
+      <div className="flex justify-around bg-black items-center min-h-[89vh] flex-row">
+        <div className="w-full md:w-[40%] relative mb-14">
+          <h2 className="text-center border-2 border-[#03A9F4] text-[#03A9F4] text-2xl py-[1rem] mt-[1.5rem] mb-[3rem] font-medium rounded-full mx-auto w-[80%]">
             <i className="fa-solid fa-circle-exclamation text-[#F5CC39]"></i>{" "}
             Instructions
           </h2>
-          <div className="mt-4 text-[#6a6e70] flex flex-col gap-[3rem]">
+          <div className=" text-[#6a6e70] flex flex-col gap-[3rem]">
             <p className="px-[5rem] text-xl">
               <span>1. </span> While recording the audio keep the mic at about 8
               cm away from your mouth.
             </p>
             <p className="px-[5rem] text-xl">
-              <span>2. </span> Pronounce the vowel /&alpha;/ or 'aa' using a
-              single breath for a maximum of 10 seconds duration while keeping
+              <span>2. </span> Pronounce the vowel 'O' or 'aa' using a
+              single breath for 6 to 10 seconds duration while keeping
               the intensity as stable as possible.
             </p>
             <p className="px-[5rem] text-xl">
@@ -147,14 +155,14 @@ export default function TakingTest(props) {
 
           <div className="flex justify-between items-center w-[75%] min-w-[200px] mt-8">
             <div
-              className="cursor-pointer bg-[#033ff4d5] text-black font-bold font-poppins text-lg px-4 py-2 rounded-md"
+              className="cursor-pointer bg-[#033ff4d5] text-white font-poppins text-lg px-4 py-2 rounded-md"
               onClick={startRecording}
             >
               <i className="fa-solid fa-play text-red-500 mr-2"></i> Start
               Recording
             </div>
             <div
-              className="cursor-pointer bg-[#033ff4d5] text-black font-bold font-poppins text-lg px-4 py-2 rounded-md"
+              className="cursor-pointer bg-[#033ff4d5] text-white font-poppins text-lg px-4 py-2 rounded-md"
               onClick={stopRecording}
             >
               <i className="fa-solid fa-pause text-green-500 mr-2"></i> Pause
@@ -162,7 +170,7 @@ export default function TakingTest(props) {
             </div>
           </div>
         </div>
-       <div className="ml-[6rem]"> <Btn data={"Get Result"} path={"result"} /></div>
+       <div className="ml-[6rem]" onClick={handleSubmit}> <Btn data={"Get Result"} path={""}/></div>
       </div>
 
         {/* <Link
@@ -173,6 +181,8 @@ export default function TakingTest(props) {
         Result
         </Link> */}
       </div>
+      <div className="h-[0.1rem] bg-slate-400"></div>
+
     </>
   );
 }

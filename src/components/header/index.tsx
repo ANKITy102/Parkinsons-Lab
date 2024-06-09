@@ -16,8 +16,8 @@ export default () => {
     ]
 
     return (
-        <nav className="bg-transparent overflow-hidden z-30 border-b w-full md:static md:text-sm md:border-none">
-            <div className="items-center z-30 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
+        <nav className="overflow-hidden bg-black top-0 z-30  w-full">
+            <div className="items-center  z-30 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                 <div className="flex z-30 items-center justify-between py-3 md:py-5 md:block">
                     <Link href="/">
                         <Image

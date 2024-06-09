@@ -5,7 +5,7 @@ import about from "../../assets/Deco/Title.png";
 export default function AboutUs() {
   return (
     <>
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+    <hr class="h-px my-8 border-0 bg-gray-700"></hr>
     <div className="text-black z-[-6] h-[30rem] flex flex-row bg-black">
       <Image
         className="relative h-[29rem] w-[29rem] right-[5.5rem] top-2 bottom-2"
@@ -26,7 +26,7 @@ export default function AboutUs() {
               2.5 M+
             </div>
           </div>
-          <div className="inline-block h-[7rem] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10"></div>
+          <div className="inline-block h-[7rem] w-0.5 self-stretch bg-neutral-100 bg-white/10"></div>
           <div>
             <div className="text-[2rem] font-extrabold text-white">
               Successfull Tests
@@ -35,7 +35,7 @@ export default function AboutUs() {
               2 M+
             </div>
           </div>
-          <div className="inline-block h-[7rem] w-0.5 self-stretch bg-neutral-100 dark:bg-white/10"></div>
+          <div className="inline-block h-[7rem] w-0.5 self-stretch bg-neutral-100 bg-white/10"></div>
           <div>
             <div className="text-[2rem] font-extrabold text-white">
               Accuracy
@@ -56,7 +56,7 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+    <hr class="h-px my-8  border-0 bg-gray-700"></hr>
     </>
   );
 }
