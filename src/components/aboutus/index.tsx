@@ -5,15 +5,17 @@ import about from "../../assets/Deco/Title.png";
 export default function AboutUs() {
   return (
     <>
-    <hr class="h-px my-8 border-0 bg-gray-700"></hr>
+    <hr className="h-px my-8 border-0 bg-gray-700"></hr>
     <div className="text-black z-[-6] h-[30rem] flex flex-row bg-black">
       <Image
         className="relative h-[29rem] w-[29rem] right-[5.5rem] top-2 bottom-2"
         src={circle}
+        alt="img"
       />
       <Image
         className="h-[19rem] w-[19rem] z-10 mt-[6rem] ml-[-27rem]"
         src={about}
+        alt="img"
       />
       <div className="flex flex-col ml-[8rem] gap-[4rem] py-10">
         <div className="text-[1.8rem] font-extrabold text-gray-400">
@@ -56,7 +58,7 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
-    <hr class="h-px my-8  border-0 bg-gray-700"></hr>
+    <hr className="h-px my-8  border-0 bg-gray-700"></hr>
     </>
   );
 }

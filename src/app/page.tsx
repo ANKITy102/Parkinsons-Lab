@@ -1,4 +1,3 @@
-import Footer from "@/components/footer";
 import AboutUs from "@/components/aboutus";
 import LandingPage from "@/components/landing-page"
 

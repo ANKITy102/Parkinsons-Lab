@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-export default function Btn({ data, path }) {
+export default function Btn({ data, path } :{data:React.ReactNode | string, path:string}) {
   const router = useRouter();
   return (
     <button
