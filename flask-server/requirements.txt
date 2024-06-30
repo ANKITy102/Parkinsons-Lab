@@ -5,3 +5,5 @@ librosa
 pandas
 matplotlib
 seaborn
+flask_cors
+xgboost
