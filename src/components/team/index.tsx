@@ -1,6 +1,7 @@
 import React from "react";
 import Ankit from "@/assets/Ankit-Yadav.jpg"
 import Shubham from "@/assets/shubham.png"
+import Neelesh from "@/assets/neelish.jpg"
 import Image, { StaticImageData } from "next/image";
 const Card = ({name, role,imageUrl} : {name:string, role:string, imageUrl:StaticImageData}) => {
   return (
@@ -31,7 +32,7 @@ const index = () => {
         <div className="flex py-24">
             <Card name="Ankit Yadav" role="Frontend & Backend" imageUrl={Ankit}/>
             <Card name="Shubham Roy" role="ML & AI" imageUrl={Shubham}/>
-            <Card name="Neelesh Saxena" role="Frontend Developer" imageUrl={Shubham}/>
+            <Card name="Neelesh Saxena" role="Frontend Developer" imageUrl={Neelesh}/>
         </div>
       </div>
       <div className="h-[0.1rem] bg-slate-400"></div>
